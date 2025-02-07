@@ -2,7 +2,7 @@
 #ifndef OUTPUTARRH
 #define OUTPUTARRH
 #include <string>
-#include <rarray>
+#include "rarray.hpp"
 // The writeBinary function writes the 1d rarray
 // 'a' to the file 'name' in binary format
 void writeBinary(const std::string& name,

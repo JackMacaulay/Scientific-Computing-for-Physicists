@@ -1,7 +1,7 @@
 #ifndef EIGENVALH
 #define EIGENVALH
 
-#include <rarray>
+#include "rarray.hpp"
 
 // Compute an approximation to the smallest eigenvalue e and
 // corresponding unnormalized eigenvector a of the matrix m.
