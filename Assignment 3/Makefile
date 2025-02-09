@@ -1,5 +1,5 @@
 # Makefile
-CXXFLAGS=-std=c++17 -O3 -Wall -g
+CXXFLAGS=-std=c++17 -O3 -Wall -g -I/usr/local/include/catch2
 LDFLAGS=-g
 all: hydrogen
 hydrogen.o: hydrogen.cpp eigenval.h output.h init.h
