@@ -1,6 +1,6 @@
 // hydrogen.cpp
 #include <iostream>
-#include <rarray>
+#include "rarray.hpp"
 #include "eigenval.h"
 #include "output.h"
 #include "init.h"

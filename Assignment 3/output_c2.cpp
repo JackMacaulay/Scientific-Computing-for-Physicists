@@ -2,7 +2,8 @@
 #include "output.h"
 #include <fstream>
 
-#include <catch2/catch_all.hpp>
+#define CATCH_CONFIG_MAIN
+#include "catch2/catch_all.hpp"
 
 TEST_CASE("writeText test")
 {
