@@ -9,16 +9,17 @@
 using namespace Catch;
 
 TEST_CASE("Integrated test of the entire code", "[integration]") {
-    int n = 27; // 3^3
-    rmatrix<double> matrix = initMatrix(n); // Use initMatrix instead of init
-    REQUIRE(matrix.size() == n);
+    // Verify matrix is correct size
+    int n = 27;
+    rmatrix<double> matrix = initMatrix(n); 
+    REQUIRE(matrix.size() == n*n);
 
     // Compute ground state energy
     double ground_state_energy;
     rvector<double> eigenvector(n);
-    groundState(matrix, ground_state_energy, eigenvector); // Correct function call
+    groundState(matrix, ground_state_energy, eigenvector); 
 
-    // Validate ground state energy (you might need an expected value here)
+    /
     REQUIRE(ground_state_energy < 0.0); // Ground state energy should be negative
 
     // Prepare data for writing

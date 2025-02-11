@@ -2,7 +2,7 @@ CXXFLAGS = -std=c++17 -O3 -Wall -g -IC:/msys64/mingw64/include
 LDFLAGS = -g
 TEST_LIBS = -lCatch2Main -lCatch2
 
-all: hydrogen
+all: hydrogen 
 
 hydrogen.o: hydrogen.cpp eigenval.h output.h init.h
 eigenval.o: eigenval.cpp eigenval.h
@@ -32,7 +32,7 @@ run_output_c2: output_c2
 	./output_c2 -s
 
 run_test_init: test_init
-	./init_test -s
+	./test_init -s
 
 run_test_eigenval: test_eigenval
 	./test_eigenval -s

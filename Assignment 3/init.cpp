@@ -27,7 +27,7 @@ double hammat(unsigned I, unsigned J, double L, unsigned r)
         const double t = -1/(2*dx*dx);
         return Vijk - 6*t;
     } else if ( (i1==i2 && j1==j2 && std::abs(static_cast<int>(k1 - k2)) == 1)
-                || (i1==i2 && std::abs(static_cast<int>(j1 - j2)) == 1 && k1 == k2)
+                || (i1==i2 && std::abs(static_cast<int>(j1 - j2)) == 1 && k1==k2)
                 || (std::abs(static_cast<int>(i1 - i2)) == 1 && j1==j2 && k1==k2) ) {
         const double t = -1/(2*dx*dx);
         return t;
