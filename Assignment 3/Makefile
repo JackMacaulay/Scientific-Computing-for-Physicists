@@ -1,18 +1,48 @@
-# Makefile
-CXXFLAGS=-std=c++17 -O3 -Wall -g -IC:/msys64/mingw64/include
-LDFLAGS=-g
+CXXFLAGS = -std=c++17 -O3 -Wall -g -IC:/msys64/mingw64/include
+LDFLAGS = -g
+TEST_LIBS = -lCatch2Main -lCatch2
+
 all: hydrogen
+
 hydrogen.o: hydrogen.cpp eigenval.h output.h init.h
 eigenval.o: eigenval.cpp eigenval.h
 output.o: output.cpp output.h
 init.o: init.cpp init.h
 output_c2.o: output_c2.cpp output.h
+test_init.o: test_init.cpp init.h
+test_eigenval.o: test_eigenval.cpp eigenval.h
+integration_test.o: integration_test.cpp init.h eigenval.h output.h
+
 hydrogen: hydrogen.o eigenval.o output.o init.o
 	$(CXX) $(LDFLAGS) -o $@ $^
+
 output_c2: output_c2.o output.o
-	$(CXX) $(LDFLAGS) -o $@ $^ -lCatch2Main -lCatch2
-run_output_c2: ./output_c2
+	$(CXX) $(LDFLAGS) -o $@ $^ $(TEST_LIBS)
+
+test_init: test_init.o init.o
+	$(CXX) $(LDFLAGS) -o $@ $^ $(TEST_LIBS)
+
+test_eigenval: test_eigenval.o eigenval.o
+	$(CXX) $(LDFLAGS) -o $@ $^ $(TEST_LIBS)
+
+integration_test: integration_test.o init.o eigenval.o output.o
+	$(CXX) $(LDFLAGS) -o $@ $^ $(TEST_LIBS)
+
+run_output_c2: output_c2
 	./output_c2 -s
+
+run_test_init: test_init
+	./init_test -s
+
+run_test_eigenval: test_eigenval
+	./test_eigenval -s
+
+run_integration_test: integration_test
+	./integration_test -s
+
+test: run_output_c2 run_test_init run_test_eigenval run_integration_test
+
 clean:
-	$(RM) hydrogen.o eigenval.o output.o init.o output_c2.o
-.PHONY: run_output_c2 all clean
+	$(RM) *.o hydrogen output_c2 test_init test_eigenval integration_test
+
+.PHONY: all clean run_output_c2 run_test_init run_test_eigenval run_integration_test test
