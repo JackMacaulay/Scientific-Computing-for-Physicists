@@ -19,7 +19,7 @@ TEST_CASE("Integrated test of the entire code", "[integration]") {
     rvector<double> eigenvector(n);
     groundState(matrix, ground_state_energy, eigenvector); 
 
-    /
+    
     REQUIRE(ground_state_energy < 0.0); // Ground state energy should be negative
 
     // Prepare data for writing

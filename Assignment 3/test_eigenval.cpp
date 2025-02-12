@@ -31,6 +31,8 @@ TEST_CASE("Testing groundState function", "[eigenval]") {
         REQUIRE(e == Approx(1.0));
     }
 
+    //This case fails - matrix elements are not properly reorganized
+    //Resultantly it is looking off diagonal and hence the smallest value is 0
     SECTION("Ground state energy of diagonal matrix is its smallest element") {
         rmatrix<double> mat(3, 3);
         mat.fill(0);
