@@ -1,6 +1,6 @@
 #include <iostream>    // for std::cout, std::cerr
 #include <cmath>       // for sin, etc.
-#include <rarray>      // for rvector and rmatrix
+#include "rarray.hpp"      // for rvector and rmatrix
 #include <string>      // for stoi, stod
 
 // A simple struct to store all relevant parameters.
