@@ -14,7 +14,8 @@
  #include <cmath>
  #include "rarray.hpp"
  #include <string>
- #include "cblas.h"
+ #include <openblas/cblas.h>
+
  
  // Holds simulation parameters.
  struct SimulationParams {

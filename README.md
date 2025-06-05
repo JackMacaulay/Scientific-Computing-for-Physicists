@@ -1,1 +1,1 @@
-This repository contains my solutions to problem sets for PHY1610.
+This repository contains my solutions to problem sets for PHY1610. These files contain assignments regarding best practices in scientific computing, using existing pacakages (rarray, STL, FFTW, BLAS, LAPACK, GSL), and testing/improving performance (profiling, performance metrics, schedulers, shared memory programming (OpenMP), parallel programming (MPI), heterogenous computing (OpenMP))

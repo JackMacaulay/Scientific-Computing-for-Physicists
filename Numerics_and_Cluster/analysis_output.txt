@@ -1,0 +1,9 @@
+g++ -O3 -g -Wall -Wfatal-errors -std=c++17   -c -o friction.o friction.cpp
+g++ -O3 -g -Wall -Wfatal-errors -std=c++17   -c -o analyze.o analyze.cpp
+g++  -o analyze analyze.o friction.o -lboost_program_options
+Output written to 'analysis.out'.
+# filename testmodel.dat
+# n 65
+# dt 0.25
+# alpha 0.12457
+rm -f testmodel.o model.o friction.o analyze.o analyze testmodel analysis.out testmodel.dat
